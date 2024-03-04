@@ -1,6 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harvard Park Homicides</title>
+</head>
+<body>
+  <div id="json-data">
+    <!-- JSON data will be inserted here -->
+  </div>
 
-
-<!-- BLOCK CONTENT -->
-
-<p>Hello World</p>
+  <script>
+    // Load JSON data
+    fetch('harvard_park_homicides.json')
+      .then(response => response.json())
+      .then(data => {
+        // Display JSON data in the HTML
+        document.getElementById('json-data').innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        console.error('Error loading JSON data:', error);
+      });
+  </script>
+</body>
+</html>
 
